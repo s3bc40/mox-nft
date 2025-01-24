@@ -5,9 +5,11 @@
 """
 
 from snekmate.auth import ownable
+
 initializes: ownable
 
 from snekmate.tokens import erc721
+
 initializes: erc721[ownable := ownable]
 
 exports: erc721.__interface__

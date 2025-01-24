@@ -15,10 +15,13 @@ is_zksync = false
 [networks.anvil]
 url = "http://127.0.0.1:8545"
 prompt_live = false
-save_to_db = false
+save_to_db = true
 chain_id = 31337
 default_account_name = "anvil0"
 unsafe_password_file = "$ANVIL_PASSWORD_PATH"
+
+[networks.anvil.contracts.mood_nft]
+deployer_script = "script/deploy_mood_nft.py"
 
 [networks.anvil-zksync]
 is_zksync = true

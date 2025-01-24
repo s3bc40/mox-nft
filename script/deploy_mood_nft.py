@@ -15,7 +15,11 @@ def deploy_mood_nft() -> VyperContract:
         sad_svg_uri = svg_to_base64_uri(sad_svg)
         print(sad_svg_uri)
 
-    mood_nft.deploy(happy_svg_uri, sad_svg_uri)
+    mood_contract: VyperContract = mood_nft.deploy(happy_svg_uri, sad_svg_uri)
+    mood_contract.mint_nft()
+    # print(f"TokenURI of first NFT: {mood_contract.tokenURI(0)}")
+
+    return mood_contract
 
 
 def moccasin_main() -> VyperContract:
